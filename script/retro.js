@@ -8,18 +8,18 @@
         console.log(singleData)
         const div=document.createElement('div')
         div.innerHTML=`
-        <div class="w-2/3 flex gap-6 p-10 bg-[#797DFC] space-y-3 rounded-2xl">
+        <div class=" flex gap-6 p-10 bg-[#797DFC] space-y-3 rounded-2xl">
           <img class="h-full" src="image/Rectangle 4.png" alt="">
           <div class="">
             <div class="flex">
-              <p class="mr-10 lg:mr-32">#music</p>
-              <p>author:Awolad hossen</p>
+              <p class="mr-10 lg:mr-32">#${singleData.category} </p>
+              <p>author:${singleData.author.name} </p>
             </div>
             <div>
-              <h2 class="text-2xl font-bold">10 kit title</h2>
+              <h2 class="text-2xl font-bold">${singleData.title} </h2>
             </div>
             <div class="mb-5">
-              <p>It's one things to subjectss </p>
+              <p>${singleData.description} </p>
             </div>
             <hr>
             
