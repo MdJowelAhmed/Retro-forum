@@ -58,7 +58,7 @@
         <!-- banner section start  -->
         <section>
           <div class="">
-            <div class="hero min-h-screen flex bg-black" style="background-image: url('./image/bnn.png');">
+            <div class="hero h-[450px] bg-opacity-90 flex flex-col lg:flex-row bg-black" style="background-image: url('./image/bnn.png');">
               
               <div class="hero-content text-center text-neutral-content w-3/5">
                 <div class="max-w-">
@@ -96,7 +96,7 @@
 
       <!-- card section  -->
       <section class="flex gap-8 flex-col lg:flex-row">
-        <div  id="card-container" class="w-2/3 space-y-5 shadow-2xl">
+        <div  id="card-container" class="lg:w-2/3 space-y-5 shadow-2xl">
 
         </div>
         
@@ -105,14 +105,40 @@
           <div class=" bg-[#12132D0D] rounded-2xl  py-10 px-5">
             <div class="flex gap-8 lg:gap-28">
              <h3 class="text-xl">Title</h3>
-             <p>Mark as read <span>0</span></p>
+             <p>Mark as read <span id="read">0</span></p>
             </div>
-            <div class="flex gap-8 mt-5">
-             <h3 class="text-xl font-medium">10 kit title</h3>
-             <p class="flex gap-2"><img src="image/Group 16.png" alt=""><span> 560</span></p>
-            </div>
+           <div id="mark-read-container" class="space-y-3 bg-amber-50 p-3 shadow-2xl rounded-xl">
+            <!-- <div class="flex gap-8 mt-5">
+              <h3 class="text-xl font-medium">10 kit title</h3>
+              <p class="flex gap-2"><img src="image/Group 16.png" alt=""><span> 560</span></p>
+             </div> -->
+           </div>
            </div>
         </div>
+      </section>
+
+      <!-- join our forum section  -->
+      <section>
+        <div class="my-16">
+          <div class="hero h-96 bg-cover " style="background-image: url('./image/joinforum.png');">
+            <div class="hero-overlay bg-opacity-60"></div>
+            <div class="hero-content text-center text-neutral-content">
+              <div class="max-w-md">
+                <h1 class="mb-5 text-5xl font-bold">Hello there</h1>
+                <p class="mb-5">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+                <button class="btn btn-primary">Get Started</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- latest post section  -->
+        <section>
+          <div class="text-center space-y-3">
+            <h2 class="text-5xl font-bold">Latest post</h2>
+            <p>Yes, you can run unit tests and view the results directly within the app. The integrated testing <br> features allow for a streamlined .</p>
+          </div>
+        </section>
       </section>
     </main>
     <footer>
