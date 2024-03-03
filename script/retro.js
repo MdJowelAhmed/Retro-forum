@@ -5,9 +5,9 @@ const loadDiscussData = async () => {
   // console.log(allData)
   const cardContainer = document.getElementById('card-container')
   allData.forEach((singleData) => {
-    console.log(singleData)
-    const daynamic = `${singleData.title} `
-    console.log(daynamic)
+    // console.log(singleData)
+    // const daynamic = `${singleData.title} `
+    // console.log(daynamic)
     const div = document.createElement('div')
     div.innerHTML = `
         <div class=" flex gap-6 p-10 bg-[#797DFC] space-y-3 rounded-2xl">
@@ -74,8 +74,45 @@ const clickWorked = (text) => {
   
 
 }
-let read=0
-const increased=()=>{
 
+// latest card container section 
+
+const loadLatestData=async()=>{
+  const res=await fetch(`https://openapi.programming-hero.com/api/retro-forum/latest-posts`)
+  const data=await res.json()
+  // console.log(data[1].title)
+  const latestContainer=document.getElementById('latest-card-container');
+  data.forEach((singleData2)=>{
+    console.log(singleData2)
+    const div=document.createElement('div')
+    div.innerHTML=`
+    <div class="card w-96 bg-base-100 shadow-xl">
+            <figure class="px-10 pt-10 mb-6">
+              <img src="${singleData2.cover_image}" alt="Shoes" class="rounded-xl" />
+            </figure>
+            <div class="flex gap-5">
+              <img class="ml-10" src="image/Frame (4).png" alt="">
+              <p> 5 march 2024</p>
+            </div>
+            <div class="card-body ">
+              <h2 class="font-bold">${singleData2.title} </h2>
+              <p>${singleData2.description.slice(0,80)} </p>
+             <div class="flex gap-3">
+              <div>
+                <img class="w-16 h-16 rounded-full" src="${singleData2.profile_image} " alt="">
+              </div>
+              <div>
+                <h3 class="text-xl font-bold">${singleData2.author.name} </h3>
+                <h3>${singleData2.author?.designation?.toString()??"nije"} </h3>
+              </div>
+             </div>
+            </div>
+          </div>
+    `;
+    latestContainer.appendChild(div)
+  })
 }
+
+loadLatestData()
+
 
