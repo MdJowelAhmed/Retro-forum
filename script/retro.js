@@ -1,9 +1,10 @@
-const loadDiscussData = async () => {
+const loadDiscussData = async (value) => {
   const res = await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts`)
   const data = await res.json()
   const allData = data.posts
   // console.log(allData)
   const cardContainer = document.getElementById('card-container')
+  cardContainer.innerHTML = "";
   allData.forEach((singleData) => {
     let isActive=''
    
@@ -67,6 +68,19 @@ const loadDiscussData = async () => {
 }
 loadDiscussData()
 
+const handleSearch=(value)=>{
+
+  const valueText=document.getElementById('input-search-field').value;
+  valueText.innerText=''
+    loadDiscussData(valueText)
+    console.log(valueText)
+    
+   
+}
+
+const valueText2=document.getElementById('input-search-field').addEventListener('click',function(){
+
+})
 
 
 const markReadContainer = document.getElementById('mark-read-container')
@@ -89,6 +103,7 @@ const loadLatestData=async()=>{
   const data=await res.json()
   // console.log(data[1].title)
   const latestContainer=document.getElementById('latest-card-container');
+  cardContainer.innerHTML = "";
   data.forEach((singleData2)=>{
     console.log(singleData2)
     const div=document.createElement('div')
