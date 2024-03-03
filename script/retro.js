@@ -92,7 +92,7 @@ const loadLatestData=async()=>{
             </figure>
             <div class="flex gap-5">
               <img class="ml-10" src="image/Frame (4).png" alt="">
-              <h3>${singleData2.author?.posted_date?.toString()??"nije"} </h3>
+              <h3>${singleData2.author?.posted_date?.toString()??"No published date"} </h3>
             </div>
             <div class="card-body ">
               <h2 class="font-bold">${singleData2.title} </h2>
@@ -103,7 +103,7 @@ const loadLatestData=async()=>{
               </div>
               <div>
                 <h3 class="text-xl font-bold">${singleData2.author.name} </h3>
-                <h3>${singleData2.author?.designation?.toString()??"nije"} </h3>
+                <h3>${singleData2.author?.designation?.toString()??"Unknown"} </h3>
               </div>
              </div>
             </div>
