@@ -1,13 +1,19 @@
 const loadDiscussData = async (isAll,value) => {
   
   let res;
+  let strings = ["Coding", "Comedy", "music"];
+  let upperCaseStrings = strings.map(str => str.toUpperCase());
+  let lowerCaseStrings = strings.map(str => str.toLowerCase());
   if(isAll){
     res=await fetch(`
     https://openapi.programming-hero.com/api/retro-forum/posts
     `)
   }
   else{
-    res=await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts?category=${value}`)
+    res=await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts?category=${value }`)
+     if(!value ){
+      alert('write valid category name')
+     }
   }
  
   const data = await res.json()
