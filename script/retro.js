@@ -1,5 +1,13 @@
-const loadDiscussData = async (value) => {
-  const res = await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts`)
+const loadDiscussData = async (isAll,value) => {
+  let res;
+  if(isAll){
+    res=await fetch(`
+    https://openapi.programming-hero.com/api/retro-forum/posts
+    `)
+  }
+  else{
+    res=await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts?category=${value}`)
+  }
   const data = await res.json()
   const allData = data.posts
   // console.log(allData)
@@ -66,13 +74,13 @@ const loadDiscussData = async (value) => {
     cardContainer.appendChild(div)
   })
 }
-loadDiscussData()
+loadDiscussData(true)
 
 const handleSearch=(value)=>{
 
   const valueText=document.getElementById('input-search-field').value;
-  valueText.innerText=''
-    loadDiscussData(valueText)
+  valueText.innerValue=''
+    loadDiscussData(false,valueText)
     console.log(valueText)
     
    
@@ -103,9 +111,9 @@ const loadLatestData=async()=>{
   const data=await res.json()
   // console.log(data[1].title)
   const latestContainer=document.getElementById('latest-card-container');
-  cardContainer.innerHTML = "";
+ 
   data.forEach((singleData2)=>{
-    console.log(singleData2)
+    // console.log(singleData2)
     const div=document.createElement('div')
     div.innerHTML=`
     <div class="card  bg-base-100 shadow-xl">
