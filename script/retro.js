@@ -1,4 +1,5 @@
 const loadDiscussData = async (isAll,value) => {
+  
   let res;
   if(isAll){
     res=await fetch(`
@@ -14,6 +15,7 @@ const loadDiscussData = async (isAll,value) => {
   const cardContainer = document.getElementById('card-container')
   cardContainer.innerHTML = "";
   allData.forEach((singleData) => {
+    document.getElementById('spinner').style.display="none"
     let isActive=''
    
     if(singleData.isActive){
@@ -77,7 +79,7 @@ const loadDiscussData = async (isAll,value) => {
 loadDiscussData(true)
 
 const handleSearch=(value)=>{
-
+  document.getElementById('spinner').style.display="block"
   const valueText=document.getElementById('input-search-field').value;
   valueText.innerValue=''
     loadDiscussData(false,valueText)
