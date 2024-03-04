@@ -92,7 +92,7 @@ const valueText2=document.getElementById('input-search-field').addEventListener(
 
 })
 
-
+//  mark as read section 
 const markReadContainer = document.getElementById('mark-read-container')
 let count=1;
 const clickWorked = (text,value) => {
@@ -100,7 +100,10 @@ const clickWorked = (text,value) => {
   let total=count++;
   reading.innerText=total;
   const div = document.createElement('div')
-  div.innerText =text;
+  const p=document.createElement('p')
+  p.innerText =text;
+  p.classList.add('my-3')
+  div.appendChild(p)
   markReadContainer.appendChild(div) 
   
 
