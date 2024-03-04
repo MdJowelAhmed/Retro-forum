@@ -9,6 +9,7 @@ const loadDiscussData = async (isAll,value) => {
   else{
     res=await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts?category=${value}`)
   }
+ 
   const data = await res.json()
   const allData = data.posts
   // console.log(allData)
@@ -79,6 +80,7 @@ const loadDiscussData = async (isAll,value) => {
 loadDiscussData(true)
 
 const handleSearch=(value)=>{
+  
   document.getElementById('spinner').style.display="block"
   const valueText=document.getElementById('input-search-field').value;
   valueText.innerValue=''
@@ -102,7 +104,6 @@ const clickWorked = (text,value) => {
   const div = document.createElement('div')
   const p=document.createElement('p')
   p.innerText =text;
-  p.classList.add('my-3')
   div.appendChild(p)
   markReadContainer.appendChild(div) 
   
